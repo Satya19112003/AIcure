@@ -1,5 +1,5 @@
 import streamlit as st
-from doctor.diagnosis import process_inputs
+from diagnosis import process_inputs
 from PIL import Image
 import tempfile
 
@@ -24,3 +24,4 @@ if st.button("Get Diagnosis"):
     if audio_response_path and not audio_response_path.startswith("Text-to-Speech Error"):
         audio_file = open(audio_response_path, "rb")
         st.audio(audio_file.read(), format='audio/mp3')
+
