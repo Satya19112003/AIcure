@@ -1,7 +1,7 @@
 from groq import Groq
 from config import GROQ_API_KEY
 
-def analyze_with_groq(query, encoded_image=None, model="latest"):
+def analyze_with_groq(query, encoded_image=None, model="meta-llama/llama-4-scout-17b-16e-instruct"):
     try:
         client = Groq(api_key=GROQ_API_KEY)
         messages = [{"role": "user", "content": [{"type": "text", "text": query}]}]
@@ -14,4 +14,5 @@ def analyze_with_groq(query, encoded_image=None, model="latest"):
         return chat_completion.choices[0].message.content
     except Exception as e:
         return f"Analysis Error: {str(e)}"
+
 
