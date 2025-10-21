@@ -1,5 +1,5 @@
 import gradio as gr
-from doctor.diagnosis import process_inputs
+from diagnosis import process_inputs
 
 iface = gr.Interface(
     fn=process_inputs,
@@ -16,3 +16,4 @@ iface = gr.Interface(
 
 if __name__ == "__main__":
     iface.launch(debug=True)
+
