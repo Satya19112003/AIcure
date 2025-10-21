@@ -1,6 +1,6 @@
-from .image_utils import encode_image
-from .groq_client import analyze_with_groq
-from .speech import text_to_speech_with_gtts
+from image_utils import encode_image
+from groq_client import analyze_with_groq
+from speech import text_to_speech_with_gtts
 
 system_prompt = """You have to act as a professional doctor, I know you are not, but this is for learning purposes.
 With what I see, I think you have .... If you make a differential, suggest some remedies for them.
@@ -31,3 +31,4 @@ def process_inputs(text_input, image_filepath=None):
         return doctor_response, None
 
     return doctor_response, audio_output_path
+
